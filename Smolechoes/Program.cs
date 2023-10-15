@@ -1,8 +1,21 @@
+using Microsoft.EntityFrameworkCore;
+using Smolechoes.Models;
+using Smolechoes.Services;
+using Smolechoes.Services.Interfaces;
+
 var builder = WebApplication.CreateBuilder(args);
+
+string connection = builder.Configuration.GetConnectionString("DefaultConnection");
+
+// Add ApplicationContext as service.
+builder.Services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(connection));
 
 // Add services to the container.
 
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddTransient<IPathwayService, PathwayService>();
+builder.Services.AddTransient<IPointService, PointService>();
 
 var app = builder.Build();
 
