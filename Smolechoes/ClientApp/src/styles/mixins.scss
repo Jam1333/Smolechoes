@@ -1,0 +1,17 @@
+@mixin displayCenterFlex() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin displayFlexByDirection($direction) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: center;
+}
+
+@mixin setGridDisplay($columns, $rows) {
+    display: grid;
+    grid-template-columns: $columns;
+    grid-template-rows: $rows;
+}

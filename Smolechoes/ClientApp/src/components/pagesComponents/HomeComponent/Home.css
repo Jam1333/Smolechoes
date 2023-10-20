@@ -1,0 +1,23 @@
+body {
+  overflow: hidden;
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+}
+main .main-container {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+}
+main .main-container .background-image {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-mask-image: linear-gradient(270deg, black 20%, transparent);
+          mask-image: linear-gradient(270deg, black 20%, transparent);
+}/*# sourceMappingURL=Home.css.map */
