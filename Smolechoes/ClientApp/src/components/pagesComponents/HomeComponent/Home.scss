@@ -1,28 +1,84 @@
 @import '../../../styles/mixins';
 @import '../../../styles/variables';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;700&family=Montserrat:wght@100;200;400;500;700&display=swap');
 
 body {
     overflow: hidden;
 }
-main  {
+.main-container {
     width: 100vw;
     height: 100vh;
+    background-color: black;
 
-    .main-container {
+    main .background-image {
+        width: 100%;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        object-fit: cover;
+        mask-image: linear-gradient(270deg,black 20%, transparent);
+    }
+
+    main .content {
+        position: relative;
+        z-index: 2;
+
         width: 100%;
         height: 100%;
+        padding: 28px 100px;
 
-        background-color: black;        
+        .heading {
+            width: 770px;
+            margin-bottom: 48px;
 
-        .background-image {
-            width: 100%;
+            font-family: $headings-font-family;
+            color: $heading-text-color;
+            font-weight: bold;
+            font-size: 56px;
+            line-height: normal;
+            -webkit-text-stroke: 2px $border-main-color;
+            text-transform: uppercase;
+        }
+        
+        .info {
+            width: 700px;
 
-            position: absolute;
-            top: 0;
-            left: 0;
+            margin-bottom: 48px;
 
-            object-fit: cover;
-            mask-image: linear-gradient(270deg,black 20%, transparent);
+            font-family: $main-text-font-family;
+            color: $text-main-color;
+            font-weight: 400;
+            font-size: 22px;
+        }
+
+        .to-exc-btn {
+            background-color: $elements-main-color;
+            border-radius: 0px 24px 24px 0px;
+
+            width: 220px;
+            height: 60px;
+
+            @include displayFlexByDirection(row);
+            justify-content: space-between;
+            
+            padding: 12px 18px 12px 24px;
+
+            font-family: $main-text-font-family;
+            font-weight: bold;
+            font-size: 20px;
+            color: #fff;
+
+            transition: .2s linear;
+            .arrow-icon {
+                width: 11px;
+            }
+
+            cursor: pointer;
+            &:hover {
+                width: 230px;
+            }
         }
     }
 }
