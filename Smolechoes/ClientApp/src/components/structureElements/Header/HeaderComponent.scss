@@ -46,6 +46,7 @@ header {
             }
             .logo-title {
                 font-size: 28px;
+                -webkit-text-stroke: 1px $border-main-color;
             }
         }
     }

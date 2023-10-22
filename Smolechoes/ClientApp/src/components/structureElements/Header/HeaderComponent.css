@@ -33,6 +33,7 @@ header .header-container .logo-link .logo-title {
   }
   header .header-container .logo-link .logo-title {
     font-size: 28px;
+    -webkit-text-stroke: 1px #B88400;
   }
 }
 @media (width < 421px) {
