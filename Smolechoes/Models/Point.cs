@@ -9,5 +9,7 @@
         public string? AudioUrl { get; set; }
         public int RouteId { get; set; }
         public Pathway? Route { get; set; }
+        public double Latitude { get; set; }
+        public double Longitude { get; set; }
     }
 }
