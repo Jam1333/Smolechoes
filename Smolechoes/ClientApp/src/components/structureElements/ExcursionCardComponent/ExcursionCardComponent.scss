@@ -1,0 +1,116 @@
+@import '../../../styles/mixins';
+@import '../../../styles/variables';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;700&family=Montserrat:wght@100;200;400;500;700&display=swap');
+
+.card {
+    width: 296px;
+    height: 198px;
+
+    background-color: #f7c441;
+
+    border-radius: 12px;
+    .card-container {
+        width: 100%;
+        height: 100%;
+
+        padding: 15px;
+        
+        @include displayFlexByDirection(row);
+        justify-content: space-between;
+
+
+        .card-content {
+            width: 55%;
+            height: 100%;
+
+            @include displayFlexByDirection(column);
+            align-items: start;
+            justify-content: space-between;
+            
+            .excursion-title {
+                font-family: $headings-font-family;
+                font-weight: 900;
+                font-size: 18px;
+                color: $border-main-color;
+                line-height: normal;
+                text-transform: uppercase;
+
+                -webkit-text-stroke: 1px #624700;
+                -webkit-text-fill-color: $border-main-color;
+                margin-bottom: 10px;
+            }
+
+            .exc-info-short {
+                font-size: 10px;
+                color: #fff;
+                line-height: normal;
+            }
+
+            .to-exc-page-btn {
+                width: 130px;
+                height: 35px;
+                @include displayCenterFlex();
+                
+                text-align: center;
+                font-family: $main-text-font-family;
+                font-size: 14px;
+                font-weight: 500;
+                
+                background-color: $border-main-color;
+                color: #fff;
+                border-radius: 10px;
+
+                transition: .2s;
+
+                &:hover {
+                    background-color: #ff9c08;
+                    color: #000;
+                }
+            }
+
+            @media (width > 480px) {
+                .excursion-title {
+                    font-size: 36px;
+                  -webkit-text-stroke: 2px #624700;
+                }
+                .exc-info-short {
+                    font-size: 20px;
+                }
+                .to-exc-page-btn {
+                    height: 15%;
+                    width: 70%;
+                    font-size: 18px;
+                    border-radius: 16px;
+                }
+            }
+
+        }
+        .image-container {
+            width: 40%;
+            height: 100%;
+            border-radius: 10px;
+
+            background-image: url('../../../../public/images/card-bg-phone.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: -135px 0px;
+
+            @media (width > 480px) {
+                background-position: -225px 0px;
+                border-radius: 16px;
+            }
+        }
+
+        @media (width > 480px) {
+            padding: 25px;
+        }
+    }
+}
+
+@media (width > 480px) {
+    .card {
+        width: 560px;
+        height: 362px;
+        border-radius: 20px;
+    }    
+}

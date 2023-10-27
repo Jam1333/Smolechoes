@@ -10,9 +10,9 @@ export default function Home() {
             <main>
                 <img src="./images/home_page_background_image.png" alt="home-page-background-image" className="background-image" />
                 <div className="content">
-                    <p className="heading">Экскурсии голосами<br />минувших эпох</p>
+                    <p className="heading">{width < 481 ? <span>Экскурсии<br />голосами<br />минувших<br />эпох</span> : <span>Экскурсии голосами<br />минувших эпох</span>}</p>
                     <div className="info-container">
-                        <p className="info">Городская культура и древние традиции Смоленска в атмосфере соответствующего исторического времени – это проект «Smolechoes». Для Вас созданы экскурсионные маршруты по самым знаменитым достопримечательностям с аудиосопровождением в стилистиках древнерусского периода, Смутного времени, Советской эпохи.</p>
+                        <p className="info">Городская культура и древние традиции Смоленска в атмосфере соответствующего исторического времени – это проект «Smolechoes». Для Вас созданы экскурсионные маршруты по знаменитым местам с аудиосопровождением в стилистиках древнерусского периода, Смутного времени, Советской эпохи.</p>
                     </div>
                     <div className="to-exc-btn" onClick={() => {window.location.href = "/excursions"}}>
                         К экскурсиям 
