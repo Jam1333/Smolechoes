@@ -64,10 +64,10 @@
     -webkit-text-stroke: 2px #624700;
   }
   .card .card-container .card-content .exc-info-short {
-    font-size: 20px;
+    font-size: 18px;
   }
   .card .card-container .card-content .to-exc-page-btn {
-    height: 15%;
+    height: 40px;
     width: 70%;
     font-size: 18px;
     border-radius: 16px;
@@ -84,7 +84,7 @@
 }
 @media (width > 480px) {
   .card .card-container .image-container {
-    background-position: -225px 0px;
+    background-position: -200px 0px;
     border-radius: 16px;
   }
 }

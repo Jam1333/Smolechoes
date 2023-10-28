@@ -74,10 +74,10 @@
                   -webkit-text-stroke: 2px #624700;
                 }
                 .exc-info-short {
-                    font-size: 20px;
+                    font-size: 18px;
                 }
                 .to-exc-page-btn {
-                    height: 15%;
+                    height: 40px;
                     width: 70%;
                     font-size: 18px;
                     border-radius: 16px;
@@ -96,7 +96,7 @@
             background-position: -135px 0px;
 
             @media (width > 480px) {
-                background-position: -225px 0px;
+                background-position: -200px 0px;
                 border-radius: 16px;
             }
         }
