@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import AppRoutes from './AppRoutes';
 import './styles/App.css'
 import Home from './components/pagesComponents/HomeComponent/Home';
 import Excursions from './components/pagesComponents/ExcursionsComponent/Excursions';
+import ExcursionPage from './components/pagesComponents/ExursionPageComponent/ExcursionPage';
 
 export default class App extends Component {
   static displayName = App.name;
@@ -15,6 +15,7 @@ export default class App extends Component {
       <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/excursions" element={<Excursions/>} />
+          <Route path="/excursion" element={<ExcursionPage/>} />
       </Routes>
     );
   }

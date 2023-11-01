@@ -1,0 +1,65 @@
+@import '../../../styles/mixins';
+@import '../../../styles/variables';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;700&family=Montserrat:wght@100;200;400;500;700&display=swap');
+
+
+
+main .content {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    padding-top: 5px;
+    @include displayFlexByDirection(column);
+    justify-content: space-between;
+    gap: 10px;
+
+    font-family: $main-text-font-family;
+
+    .exc-dur-icon {
+        width: 20px;
+    }
+
+    .timing {
+        @include displayFlexByDirection(row);
+        justify-content: space-between;
+        gap: 10px;
+        .exc-dur-title {
+            color: $heading-text-color;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .exc-dur {
+            color: #fff;
+            font-weight: normal;
+            font-size: 14px;
+        }
+    }
+
+    .excursion-info {
+        padding: 20px;
+        color: #fff;
+    }
+
+    .start-excursion-btn {
+        width: 175px;
+        height: 50px;
+
+        @include displayCenterFlex();
+
+        background-color: $heading-text-color;
+        border-radius: 12px;
+
+        font-weight: bold;
+        color: #fff;
+        font-size: 20px;
+
+        transition: .2s;
+
+        &:hover {
+            background-color: #ff9c08;
+            color: black;
+            width: 180px;
+        }
+    }
+}

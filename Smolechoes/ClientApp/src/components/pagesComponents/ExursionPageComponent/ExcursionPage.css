@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;700&family=Montserrat:wght@100;200;400;500;700&display=swap");
+main .content {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  padding-top: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-family: "Montserrat", sans-serif;
+}
+main .content .exc-dur-icon {
+  width: 20px;
+}
+main .content .timing {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+main .content .timing .exc-dur-title {
+  color: #F7C441;
+  font-weight: bold;
+  font-size: 14px;
+}
+main .content .timing .exc-dur {
+  color: #fff;
+  font-weight: normal;
+  font-size: 14px;
+}
+main .content .excursion-info {
+  padding: 20px;
+  color: #fff;
+}
+main .content .start-excursion-btn {
+  width: 175px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F7C441;
+  border-radius: 12px;
+  font-weight: bold;
+  color: #fff;
+  font-size: 20px;
+  transition: 0.2s;
+}
+main .content .start-excursion-btn:hover {
+  background-color: #ff9c08;
+  color: black;
+  width: 180px;
+}/*# sourceMappingURL=ExcursionPage.css.map */

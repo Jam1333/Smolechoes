@@ -5,15 +5,16 @@ import './Excursions.css'
 
 
 export default function Excursions() {
+    document.title = "Экскурсии";
     return(
         <div className="page-container">
             <HeaderComponent/>
             <main className="main-container">
-                <ExcursionCardComponent />
-                <ExcursionCardComponent />
-                <ExcursionCardComponent />
-                <ExcursionCardComponent />
-                <ExcursionCardComponent />
+                <ExcursionCardComponent link="/excursion"/>
+                <ExcursionCardComponent link="/excursion"/>
+                <ExcursionCardComponent link="/excursion"/>
+                <ExcursionCardComponent link="/excursion"/>
+                <ExcursionCardComponent link="/excursion"/>
 
             </main>
         </div>
