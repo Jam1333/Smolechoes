@@ -12,7 +12,9 @@ builder.Services.AddDbContext<ApplicationContext>(options => options.UseSqlServe
 
 // Add services to the container.
 
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews().AddNewtonsoftJson(options =>
+    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+);
 
 builder.Services.AddTransient<IPathwayService, PathwayService>();
 builder.Services.AddTransient<IPointService, PointService>();
