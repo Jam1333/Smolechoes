@@ -1,0 +1,141 @@
+@import '../../../styles/mixins';
+@import '../../../styles/variables';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;700&family=Montserrat:wght@100;200;400;500;700&display=swap');
+
+body {
+    // overflow: hidden;
+    background-color: black;
+}
+
+
+.main-container {
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+
+    main .background-image {
+        width: 100vw;
+        height: 100vh;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        object-fit: cover;
+        mask-image: linear-gradient(270deg,black 20%, transparent);
+    }
+    @media (width < 421px) {
+        main .background-image {
+            object-position: -315px;
+            mask-image: linear-gradient(180deg,black -40%, transparent);
+        }
+    }
+
+
+    main .content {
+        position: relative;
+        z-index: 2;
+
+        width: 70%;
+        height: 100%;
+        padding: 28px 100px;
+
+        .heading {
+            font-family: $headings-font-family;
+            color: $heading-text-color;
+            font-weight: bold;
+            font-size: 4cqi;
+            // font-size: 20cqi;
+            line-height: normal;
+            -webkit-text-stroke: 2px $border-main-color;
+            text-transform: uppercase;
+
+            margin-bottom: 48px;
+        }
+        
+        .info-container {
+            width: 80%;
+
+            margin-bottom: 36px;
+
+            .info {
+                font-family: $main-text-font-family;
+                color: $text-main-color;
+                font-weight: 400;
+                font-size: 1.5cqi;
+            }
+        }
+
+        .to-exc-btn {
+            background-color: $elements-main-color;
+            border-radius: 0px 24px 24px 0px;
+
+            width: 220px;
+            height: 60px;
+
+            @include displayFlexByDirection(row);
+            justify-content: space-between;
+            
+            padding: 12px 18px 12px 24px;
+
+            font-family: $main-text-font-family;
+            font-weight: bold;
+            font-size: 20px;
+            color: #fff;
+
+            transition: .2s linear;
+            .arrow-icon {
+                width: 11px;
+            }
+
+            cursor: pointer;
+            &:hover {
+                width: 230px;
+            }
+        }
+    }
+
+    @media (width < 421px) {
+        main {
+            width: 100%;
+            height: 100%;
+
+            padding: 0px 36px 0px 36px;
+
+            .content {
+                width: 100%;
+                padding: 0 0 32px 0;
+                height: 580px;
+
+                @include displayFlexByDirection(column);
+                .heading {
+                    -webkit-text-stroke: 1px $border-main-color;
+                    text-align: center;
+                    font-size: 8cqi;
+                    margin-bottom: 20px;
+                }
+
+                .info-container {
+                    width: 100%;
+
+                    padding: 0 24px;
+
+                    .info {
+                        font-size: 4.1cqi;
+                    }     
+                }
+                .to-exc-btn {
+                    border-radius: 24px;
+                    width: 220px;
+                    height: 60px;   
+                    
+                    transition: .5s;
+
+                    &:hover {
+                        background-color: #ff9900;
+                    }
+                }
+            }
+        }
+    }
+}

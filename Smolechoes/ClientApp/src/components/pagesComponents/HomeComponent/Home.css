@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;700&family=Montserrat:wght@100;200;400;500;700&display=swap");
+body {
+  background-color: black;
+}
+
+.main-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+}
+.main-container main .background-image {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-mask-image: linear-gradient(270deg, black 20%, transparent);
+          mask-image: linear-gradient(270deg, black 20%, transparent);
+}
+@media (width < 421px) {
+  .main-container main .background-image {
+    -o-object-position: -315px;
+       object-position: -315px;
+    -webkit-mask-image: linear-gradient(180deg, black -40%, transparent);
+            mask-image: linear-gradient(180deg, black -40%, transparent);
+  }
+}
+.main-container main .content {
+  position: relative;
+  z-index: 2;
+  width: 70%;
+  height: 100%;
+  padding: 28px 100px;
+}
+.main-container main .content .heading {
+  font-family: "Montserrat Alternates", sans-serif;
+  color: #F7C441;
+  font-weight: bold;
+  font-size: 4cqi;
+  line-height: normal;
+  -webkit-text-stroke: 2px #B88400;
+  text-transform: uppercase;
+  margin-bottom: 48px;
+}
+.main-container main .content .info-container {
+  width: 80%;
+  margin-bottom: 36px;
+}
+.main-container main .content .info-container .info {
+  font-family: "Montserrat", sans-serif;
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 1.5cqi;
+}
+.main-container main .content .to-exc-btn {
+  background-color: #ffc93b;
+  border-radius: 0px 24px 24px 0px;
+  width: 220px;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px 12px 24px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  color: #fff;
+  transition: 0.2s linear;
+  cursor: pointer;
+}
+.main-container main .content .to-exc-btn .arrow-icon {
+  width: 11px;
+}
+.main-container main .content .to-exc-btn:hover {
+  width: 230px;
+}
+@media (width < 421px) {
+  .main-container main {
+    width: 100%;
+    height: 100%;
+    padding: 0px 36px 0px 36px;
+  }
+  .main-container main .content {
+    width: 100%;
+    padding: 0 0 32px 0;
+    height: 580px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .main-container main .content .heading {
+    -webkit-text-stroke: 1px #B88400;
+    text-align: center;
+    font-size: 8cqi;
+    margin-bottom: 20px;
+  }
+  .main-container main .content .info-container {
+    width: 100%;
+    padding: 0 24px;
+  }
+  .main-container main .content .info-container .info {
+    font-size: 4.1cqi;
+  }
+  .main-container main .content .to-exc-btn {
+    border-radius: 24px;
+    width: 220px;
+    height: 60px;
+    transition: 0.5s;
+  }
+  .main-container main .content .to-exc-btn:hover {
+    background-color: #ff9900;
+  }
+}/*# sourceMappingURL=Home.css.map */

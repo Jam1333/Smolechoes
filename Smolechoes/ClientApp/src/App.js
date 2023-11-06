@@ -1,22 +1,22 @@
 import React, { Component } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import AppRoutes from './AppRoutes';
-import { Layout } from './components/Layout';
-import './custom.css';
+import './styles/App.css'
+import Home from './components/pagesComponents/HomeComponent/Home';
+import Excursions from './components/pagesComponents/ExcursionsComponent/Excursions';
+import ExcursionPage from './components/pagesComponents/ExursionPageComponent/ExcursionPage';
 
 export default class App extends Component {
   static displayName = App.name;
 
   render() {
+    console.log(window.innerWidth);
+
     return (
-      <Layout>
-        <Routes>
-          {AppRoutes.map((route, index) => {
-            const { element, ...rest } = route;
-            return <Route key={index} {...rest} element={element} />;
-          })}
-        </Routes>
-      </Layout>
+      <Routes>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/excursions" element={<Excursions/>} />
+          <Route path="/excursion" element={<ExcursionPage/>} />
+      </Routes>
     );
   }
 }
