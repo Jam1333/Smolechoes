@@ -1,12 +1,44 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import './PlayerComponent.css'
 import HeaderComponent from "../../structureElements/Header/HeaderComponent";
-import { MapContainer, TileLayer } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { Icon } from "leaflet";
 
 export default function PlayerComponent() {
-    const position = [8.1386, 5.1026]; // [latitude, longitude]
-    const zoomLevel = 13; 
+
+    const params = useParams();
+    const excursionId = params.id;
+
+    const position = [54.782635, 32.045287]; // [latitude, longitude]
+    const zoomLevel = 12;
     const [isActive, setIsActive] = useState(false);
+
+    let markers = [];
+
+    const [excursionData, setExcursionData] = useState(null);
+    useEffect(() => {
+        fetch(`http://localhost:5297/api/Pathways/${excursionId}`)
+            .then(res => {
+                return res.json()
+            })
+            .then(data => {
+                console.log(data);
+                data.points.forEach(point => {
+                    markers.push({
+                        geocode: [point.latitude, point.longitude],
+                        popup: point.name
+                    });
+                });
+                console.log(markers);
+                return setExcursionData(data);
+            })
+    }, []);
+
+    const customIcon = new Icon({
+        iconUrl: "./images/forward_arrow_icon.svg",
+        iconSize: [38, 38]
+    });
 
     return (
         <div className="player-page-container">
@@ -22,6 +54,10 @@ export default function PlayerComponent() {
                             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                             url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
                         />
+                        {markers.map(marker => (
+                            <Marker position={marker.geocode} icon={ customIcon }>
+                                <Popup>{ marker.popup }</Popup>
+                        </Marker>))}
                     </MapContainer>
                     <div className="player-controls">
                         <span className="point-name">Крепостная стена</span>

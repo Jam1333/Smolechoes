@@ -1,8 +1,12 @@
 import React from "react";
-import HeaderComponent from '../../structureElements/Header/HeaderComponent'
-import './ExcursionPage.css'
+import { useParams } from "react-router-dom";
+import HeaderComponent from '../../structureElements/Header/HeaderComponent';
+import './ExcursionPage.css';
 
 export default function ExcursionPage() {
+
+    const params = useParams();
+    const excursionId = params.id;
 
     return (
         <div className="exc-page-container"style={{height: '100%'} }>
@@ -17,7 +21,7 @@ export default function ExcursionPage() {
                     <div className="excursion-info">Далеко-далеко, за словесными горами в стране гласных и согласных живут рыбные тексты. Инициал наш подзаголовок ее снова дороге жизни путь последний, речью, пунктуация не заглавных рекламных предупредила все переписывается большого составитель бросил!</div>
                     <div className="excursion-info">Далеко-далеко, за словесными горами в стране гласных и согласных живут рыбные тексты. Инициал наш подзаголовок ее снова дороге жизни путь последний, речью, пунктуация не заглавных рекламных предупредила все переписывается большого составитель бросил!</div>
                     <div className="excursion-info">Далеко-далеко, за словесными горами в стране гласных и согласных живут рыбные тексты. Инициал наш подзаголовок ее снова дороге жизни путь последний, речью, пунктуация не заглавных рекламных предупредила все переписывается большого составитель бросил!</div>
-                    <div className="start-excursion-btn" onClick={() => window.location.href="/player"}>В путь!</div>
+                    <div className="start-excursion-btn" onClick={() => window.location.href = `/player/${excursionId}`}>В путь!</div>
                 </div>
             </main>
         </div>
