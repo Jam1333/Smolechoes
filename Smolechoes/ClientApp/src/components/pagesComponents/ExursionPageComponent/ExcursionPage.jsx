@@ -2,7 +2,7 @@ import React from "react";
 import HeaderComponent from '../../structureElements/Header/HeaderComponent'
 import './ExcursionPage.css'
 
-export default function  ExcursionPage() {
+export default function ExcursionPage() {
 
     return (
         <div className="exc-page-container"style={{height: '100%'} }>
