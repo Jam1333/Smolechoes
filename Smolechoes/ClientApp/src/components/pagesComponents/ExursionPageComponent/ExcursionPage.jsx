@@ -13,6 +13,8 @@ export default function ExcursionPage() {
             <HeaderComponent/>
             <main>
                 <div className="exc-page-content">
+                    <img src="./images/Фото_для_карточки_экскурсии_1.jpg" alt="background image" className="exc-page-hero" />
+                    <span className="exc-heading">Крепостная стена</span>
                     <div className="timing">
                         <img src="./images/excursion_duration_icon.svg" alt="excursion_duration_icon" className="exc-dur-icon" />
                         <span className="exc-dur-title">Длительность экскурсии:</span>

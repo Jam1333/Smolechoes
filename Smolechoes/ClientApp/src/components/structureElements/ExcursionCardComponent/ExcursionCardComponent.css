@@ -30,7 +30,7 @@
   color: #B88400;
   line-height: normal;
   text-transform: uppercase;
-  -webkit-text-stroke: 1px #624700;
+  -webkit-text-stroke: 0.5px #624700;
   -webkit-text-fill-color: #B88400;
   margin-bottom: 10px;
 }
@@ -86,6 +86,47 @@
     width: 70%;
     font-size: 18px;
     border-radius: 16px;
+  }
+}
+.card .card-container .card-in-progress-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.card .card-container .card-in-progress-content .excursion-title {
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: 900;
+  font-size: 4.5cqi;
+  color: #B88400;
+  line-height: normal;
+  text-transform: uppercase;
+  -webkit-text-stroke: 0.5px #624700;
+  -webkit-text-fill-color: #B88400;
+  margin-bottom: 10px;
+}
+.card .card-container .card-in-progress-content .exc-info-short {
+  font-size: 4cqi;
+  color: #fff;
+  line-height: normal;
+}
+.card .card-container .card-in-progress-content .in-progress-icon {
+  width: 70px;
+  margin-bottom: 10px;
+}
+@media (width > 1100px) {
+  .card .card-container .card-in-progress-content .excursion-title {
+    font-size: 2.3cqi;
+    -webkit-text-stroke: 1px #624700;
+  }
+  .card .card-container .card-in-progress-content .exc-info-short {
+    font-size: 1.6cqi;
+  }
+  .card .card-container .card-in-progress-content .in-progress-icon {
+    width: 120px;
   }
 }
 .card .card-container .image-container {
