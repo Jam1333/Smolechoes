@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import './PlayerComponent.css'
 import HeaderComponent from "../../structureElements/Header/HeaderComponent";
+import { MapContainer, TileLayer } from "react-leaflet";
 
 export default function PlayerComponent() {
-
+    const position = [8.1386, 5.1026]; // [latitude, longitude]
+    const zoomLevel = 13; 
     const [isActive, setIsActive] = useState(false);
 
     return (
@@ -11,7 +13,16 @@ export default function PlayerComponent() {
             <HeaderComponent/>
             <div className="player-page-content">
                 <div className="player-block">
-                    <div className="player-map"></div>
+                    <MapContainer 
+                            className="player-map"
+                            center={position} 
+                            zoom={zoomLevel} 
+                            scrollWheelZoom={false}>
+                        <TileLayer
+                            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                            url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+                        />
+                    </MapContainer>
                     <div className="player-controls">
                         <span className="point-name">Крепостная стена</span>
                         <div className="track-line">
