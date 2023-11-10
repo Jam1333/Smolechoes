@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import './PlayerComponent.css'
 import HeaderComponent from "../../structureElements/Header/HeaderComponent";
 
 export default function PlayerComponent() {
+
+    const [isActive, setIsActive] = useState(false);
+
     return (
         <div className="player-page-container">
             <HeaderComponent/>
@@ -19,8 +22,10 @@ export default function PlayerComponent() {
                             <div className="prev-point-btn">
                                 <img src="./images/prevPointBtn.svg" alt="previous point button" className="prev-btn-icon"/>
                             </div>
-                            <div className="pause-btn">
-                                <img src="./images/pauseBtn.svg" alt="pause audio button" className="pauseBtn"/>
+                            <div className="pause-btn" onClick={() => setIsActive(!isActive)}>
+                                <span className="left-bar"></span>
+                                <span className="right-bar_1"></span>
+                                <span className="right-bar_2"></span>
                             </div>
                             <div className="next-point-btn">
                                 <img src="./images/nextPointBtn.svg" alt="next point button" className="next-btn-icon"/>

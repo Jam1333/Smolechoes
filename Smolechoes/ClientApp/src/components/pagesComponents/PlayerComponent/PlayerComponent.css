@@ -86,8 +86,45 @@
 .player-page-container .player-page-content .player-block .player-controls .btns .prev-point-btn .prev-btn-icon {
   width: 25px;
 }
-.player-page-container .player-page-content .player-block .player-controls .btns .pauseBtn {
+.player-page-container .player-page-content .player-block .player-controls .btns .pause-btn {
   width: 40px;
+  height: 60px;
+  position: relative;
+  transition: 0.2s;
+}
+.player-page-container .player-page-content .player-block .player-controls .btns .pause-btn .left-bar {
+  position: absolute;
+  width: 10px;
+  height: 100%;
+  background-color: #FFD361;
+  border-radius: 20px;
+  transition: 0.2s;
+}
+.player-page-container .player-page-content .player-block .player-controls .btns .pause-btn .right-bar_1 {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 10px;
+  height: 60%;
+  background-color: #FFD361;
+  border-radius: 20px;
+  transition: 0.2s;
+}
+.player-page-container .player-page-content .player-block .player-controls .btns .pause-btn .right-bar_2 {
+  position: absolute;
+  right: 0;
+  top: 38.5%;
+  width: 10px;
+  height: 60%;
+  background-color: #FFD361;
+  border-radius: 20px;
+  transition: 0.2s;
+}
+.player-page-container .player-page-content .player-block .player-controls .btns .pause-btn.active .right-bar_1 {
+  transform: rotate(-55deg) translateY(-10px) translateX(-5px) scaleY(1.5);
+}
+.player-page-container .player-page-content .player-block .player-controls .btns .pause-btn.active .right-bar_2 {
+  transform: rotate(55deg) translateY(10px) translateX(-5px) scaleY(1.5);
 }
 .player-page-container .player-page-content .player-block .player-controls .btns .next-point-btn {
   width: 50px;
