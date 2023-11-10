@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Smolechoes.Models;
 using Smolechoes.Services;
@@ -19,6 +20,8 @@ builder.Services.AddControllersWithViews().AddNewtonsoftJson(options =>
 builder.Services.AddTransient<IPathwayService, PathwayService>();
 builder.Services.AddTransient<IPointService, PointService>();
 
+builder.Services.AddCors();
+
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
@@ -29,6 +32,8 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+
+app.UseCors(corsPolicyBuilder => corsPolicyBuilder.AllowAnyOrigin());
 
 app.UseSwagger();
 app.UseSwaggerUI();

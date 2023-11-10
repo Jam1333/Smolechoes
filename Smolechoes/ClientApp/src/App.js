@@ -4,6 +4,7 @@ import './styles/App.css'
 import Home from './components/pagesComponents/HomeComponent/Home';
 import Excursions from './components/pagesComponents/ExcursionsComponent/Excursions';
 import ExcursionPage from './components/pagesComponents/ExursionPageComponent/ExcursionPage';
+import PlayerComponent from './components/pagesComponents/PlayerComponent/PlayerComponent';
 
 export default class App extends Component {
   static displayName = App.name;
@@ -16,6 +17,7 @@ export default class App extends Component {
           <Route path="/" element={<Home/>}/>
           <Route path="/excursions" element={<Excursions/>} />
           <Route path="/excursion" element={<ExcursionPage/>} />
+          <Route path="/player" element={<PlayerComponent/>} />
       </Routes>
     );
   }
