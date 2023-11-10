@@ -1,12 +1,37 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import './PlayerComponent.css'
 import HeaderComponent from "../../structureElements/Header/HeaderComponent";
-import { MapContainer, TileLayer } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { Icon } from "leaflet";
 
 export default function PlayerComponent() {
-    const position = [8.1386, 5.1026]; // [latitude, longitude]
-    const zoomLevel = 13; 
+
+    const params = useParams();
+    const excursionId = params.id;
+
+    const [currentPosition, setCurrentPosition] = useState(excursionId == 1 ? [54.782464, 31.863863] : [54.782635, 32.045287]);
+
+    const zoomLevel = 13;
     const [isActive, setIsActive] = useState(false);
+
+    const [excursionData, setExcursionData] = useState(null);
+    useEffect(() => {
+        fetch(`http://localhost:5297/api/Pathways/${excursionId}`)
+            .then(res => {
+                return res.json()
+            })
+            .then(data => {
+                console.log(currentPosition);
+                console.log(data);
+                return setExcursionData(data);
+            })
+    }, []);
+
+    const customIcon = new Icon({
+        iconUrl: "./images/point_icon.svg",
+        iconSize: [38, 38]
+    });
 
     return (
         <div className="player-page-container">
@@ -15,13 +40,17 @@ export default function PlayerComponent() {
                 <div className="player-block">
                     <MapContainer 
                             className="player-map"
-                            center={position} 
-                            zoom={zoomLevel} 
-                            scrollWheelZoom={false}>
+                            center={currentPosition} 
+                            zoom={zoomLevel} >
                         <TileLayer
                             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                             url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
                         />
+                        {excursionData !== null ? excursionData.points.map(point => (
+                            <Marker position={[point.latitude, point.longitude]} icon={ customIcon }>
+                                <Popup>{ point.name }</Popup>
+                            </Marker>
+                        )) : null}
                     </MapContainer>
                     <div className="player-controls">
                         <span className="point-name">Крепостная стена</span>
