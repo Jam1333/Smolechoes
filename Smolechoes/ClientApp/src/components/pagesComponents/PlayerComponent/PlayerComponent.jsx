@@ -10,11 +10,10 @@ export default function PlayerComponent() {
     const params = useParams();
     const excursionId = params.id;
 
-    const position = [54.782635, 32.045287]; // [latitude, longitude]
-    const zoomLevel = 12;
-    const [isActive, setIsActive] = useState(false);
+    const [currentPosition, setCurrentPosition] = useState(excursionId == 1 ? [54.782464, 31.863863] : [54.782635, 32.045287]);
 
-    let markers = [];
+    const zoomLevel = 13;
+    const [isActive, setIsActive] = useState(false);
 
     const [excursionData, setExcursionData] = useState(null);
     useEffect(() => {
@@ -23,20 +22,14 @@ export default function PlayerComponent() {
                 return res.json()
             })
             .then(data => {
+                console.log(currentPosition);
                 console.log(data);
-                data.points.forEach(point => {
-                    markers.push({
-                        geocode: [point.latitude, point.longitude],
-                        popup: point.name
-                    });
-                });
-                console.log(markers);
                 return setExcursionData(data);
             })
     }, []);
 
     const customIcon = new Icon({
-        iconUrl: "./images/forward_arrow_icon.svg",
+        iconUrl: "./images/point_icon.svg",
         iconSize: [38, 38]
     });
 
@@ -47,17 +40,17 @@ export default function PlayerComponent() {
                 <div className="player-block">
                     <MapContainer 
                             className="player-map"
-                            center={position} 
-                            zoom={zoomLevel} 
-                            scrollWheelZoom={false}>
+                            center={currentPosition} 
+                            zoom={zoomLevel} >
                         <TileLayer
                             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                             url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
                         />
-                        {markers.map(marker => (
-                            <Marker position={marker.geocode} icon={ customIcon }>
-                                <Popup>{ marker.popup }</Popup>
-                        </Marker>))}
+                        {excursionData !== null ? excursionData.points.map(point => (
+                            <Marker position={[point.latitude, point.longitude]} icon={ customIcon }>
+                                <Popup>{ point.name }</Popup>
+                            </Marker>
+                        )) : null}
                     </MapContainer>
                     <div className="player-controls">
                         <span className="point-name">Крепостная стена</span>
