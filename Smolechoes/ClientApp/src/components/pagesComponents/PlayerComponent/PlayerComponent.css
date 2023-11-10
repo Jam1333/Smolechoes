@@ -14,15 +14,124 @@
 }
 .player-page-container .player-page-content .player-block {
   width: 80%;
-  height: 88%;
-  margin-top: 20px;
+  height: 95%;
+  margin-top: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .player-page-container .player-page-content .player-block .player-map {
   width: 90%;
-  height: 60%;
-  background: #fff;
+  height: 50%;
   border-radius: 20px;
+  margin-bottom: 40px;
+}
+.player-page-container .player-page-content .player-block .player-controls {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+}
+.player-page-container .player-page-content .player-block .player-controls .point-name {
+  font-family: "Montserrat", sans-serif;
+  font-size: 26px;
+  color: #FFD361;
+  font-weight: bold;
+}
+.player-page-container .player-page-content .player-block .player-controls .track-line {
+  width: 80%;
+  position: absolute;
+}
+.player-page-container .player-page-content .player-block .player-controls .track-line .line {
+  width: 100%;
+  height: 10px;
+  background: #FFD361;
+  border-radius: 15px;
+  margin-top: 80px;
+}
+.player-page-container .player-page-content .player-block .player-controls .track-line .point-number {
+  position: absolute;
+  top: 50px;
+  left: 38.5%;
+  width: 70px;
+  height: 70px;
+  background: #FFD361;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  color: #B88400;
+  transition: 0.2s;
+}
+.player-page-container .player-page-content .player-block .player-controls .btns {
+  margin-top: 72px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+.player-page-container .player-page-content .player-block .player-controls .btns .prev-point-btn {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.player-page-container .player-page-content .player-block .player-controls .btns .prev-point-btn .prev-btn-icon {
+  width: 25px;
+}
+.player-page-container .player-page-content .player-block .player-controls .btns .pause-btn {
+  width: 40px;
+  height: 60px;
+  position: relative;
+  transition: 0.2s;
+}
+.player-page-container .player-page-content .player-block .player-controls .btns .pause-btn .left-bar {
+  position: absolute;
+  width: 10px;
+  height: 100%;
+  background-color: #FFD361;
+  border-radius: 20px;
+  transition: 0.2s;
+}
+.player-page-container .player-page-content .player-block .player-controls .btns .pause-btn .right-bar_1 {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 10px;
+  height: 60%;
+  background-color: #FFD361;
+  border-radius: 20px;
+  transition: 0.2s;
+}
+.player-page-container .player-page-content .player-block .player-controls .btns .pause-btn .right-bar_2 {
+  position: absolute;
+  right: 0;
+  top: 38.5%;
+  width: 10px;
+  height: 60%;
+  background-color: #FFD361;
+  border-radius: 20px;
+  transition: 0.2s;
+}
+.player-page-container .player-page-content .player-block .player-controls .btns .pause-btn.active .right-bar_1 {
+  transform: rotate(-55deg) translateY(-10px) translateX(-5px) scaleY(1.5);
+}
+.player-page-container .player-page-content .player-block .player-controls .btns .pause-btn.active .right-bar_2 {
+  transform: rotate(55deg) translateY(10px) translateX(-5px) scaleY(1.5);
+}
+.player-page-container .player-page-content .player-block .player-controls .btns .next-point-btn {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.player-page-container .player-page-content .player-block .player-controls .btns .next-point-btn .next-btn-icon {
+  width: 25px;
 }/*# sourceMappingURL=PlayerComponent.css.map */

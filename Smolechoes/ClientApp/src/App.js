@@ -10,13 +10,11 @@ export default class App extends Component {
   static displayName = App.name;
 
   render() {
-    console.log(window.innerWidth);
-
     return (
       <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/excursions" element={<Excursions/>} />
-          <Route path="/excursion" element={<ExcursionPage/>} />
+          <Route path="/excursion/:id" element={<ExcursionPage/>} />
           <Route path="/player" element={<PlayerComponent/>} />
       </Routes>
     );

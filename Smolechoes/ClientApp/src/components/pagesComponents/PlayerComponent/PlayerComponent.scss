@@ -15,20 +15,149 @@
 
         .player-block {
             width: 80%;
-            height: 88%;
-            margin-top: 20px;
+            height: 95%;
+            margin-top: 10px;
 
             @include displayFlexByDirection(column);
             
 
             .player-map {
                 width: 90%;
-                height: 60%;
-                background: #fff;
+                height: 50%;
                 border-radius: 20px;
+                margin-bottom: 40px;
             }
 
-            .
+            .player-controls {
+                width: 100%;
+                height: 30%;
+
+                @include displayFlexByDirection(column);
+
+                gap: 35px;
+
+                .point-name {
+                    font-family: $main-text-font-family;
+                    font-size: 26px;
+                    color: #FFD361;
+                    font-weight: bold;
+                }
+
+                .track-line {
+                    width: 80%;
+                    position: absolute;
+
+                    .line {
+                        width: 100%;
+                        height: 10px;
+                        background: #FFD361;
+                        border-radius: 15px; 
+                        margin-top: 80px;
+                    }
+
+                    .point-number {
+                        position: absolute;
+                        top: 50px;
+                        left: 38.5%;
+                        
+                        width: 70px;
+                        height: 70px;
+                        background: #FFD361;
+                        border-radius: 50px;
+
+                        @include displayCenterFlex();
+                        
+                        font-family: $main-text-font-family;
+                        font-weight: bold;
+                        font-size: 30px;
+                        color: $border-main-color;
+
+                        transition: .2s;
+                    }
+                }
+
+                .btns {
+                    margin-top: 72px;
+                    @include displayFlexByDirection(row);
+
+                    gap: 20px;
+
+                    .prev-point-btn {
+                        width: 50px;
+                        height: 50px;
+                        @include displayCenterFlex();
+
+                        .prev-btn-icon {
+                            width: 25px;
+                        }
+                    }
+
+                    .pause-btn {
+                        width: 40px;
+                        height: 60px;
+
+                        position: relative;
+
+                        transition: .2s;
+                        
+                        .left-bar {
+                            position: absolute;
+                            width: 10px;
+                            height: 100%;
+                            background-color: #FFD361;
+                            border-radius: 20px;
+
+                            transition: .2s;
+                        }
+
+                        .right-bar_1 {
+                            position: absolute;
+                            right: 0;
+                            top: 0;
+                            width: 10px;
+                            height: 60%;
+                            background-color: #FFD361;
+                            border-radius: 20px;
+
+                            transition: .2s;
+                        }
+
+                        .right-bar_2 {
+                            position: absolute;
+                            right: 0;
+                            top: 38.5%;
+                            width: 10px;
+                            height: 60%;
+                            background-color: #FFD361;
+                            border-radius: 20px;
+
+                            transition: .2s;
+                        }
+
+                        &.active {
+                            .left-bar {}
+
+                            .right-bar_1 {
+                                transform: rotate(-55deg) translateY(-10px) translateX(-5px) scaleY(1.5);
+                            }
+
+                            .right-bar_2 {
+                                transform: rotate(55deg) translateY(10px) translateX(-5px) scaleY(1.5);
+                            }
+                        }
+                    }
+
+                    .next-point-btn {
+                        width: 50px;
+                        height: 50px;
+                        @include displayCenterFlex();
+
+                        .next-btn-icon {
+                            width: 25px;
+                        }
+                    }
+                }
+            }
         }
     }
 }
