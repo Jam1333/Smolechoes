@@ -25,6 +25,9 @@ export default function Excursions() {
                 {(excursionsData != null) ? excursionsData.map(exc => (
                     <ExcursionCardComponent link={`/excursion/${exc.id}`} name={exc.name} description={exc.description}/>
                 )) : null}
+                <ExcursionCardComponent link={"/excursion/5"} name={"Крепостная стена"} description={"В разработке..."} />
+                <ExcursionCardComponent link={"/excursion/6"} name={"Домонгольская архитектура"} description={"В разработке..."} />
+                <ExcursionCardComponent link={"/excursion/7"} name={"Парки и сады"} description={"В разработке..."} />
             </main>
         </div>
     )
